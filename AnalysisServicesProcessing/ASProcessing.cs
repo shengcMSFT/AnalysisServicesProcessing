@@ -56,8 +56,8 @@ namespace AnalysisServicesProcessing
 
             // get the connection string in the linked service
             string blobconnectionString = outputLinkedService.ConnectionString;
-            // read the blob content
-            string asCmdStr = ReadBlob(blobconnectionString, "container", "folder/filename.tmsl");
+            // read the blob content for Analysis Services processing TMSL json script
+            string asCmdStr = ReadBlob(blobconnectionString, "container", "folder/processdatabase.json");
             
             // Connection string to connect to Azure AS
             string asConnStr = @"<AS Connection String>";
