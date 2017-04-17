@@ -1,0 +1,41 @@
+﻿{
+  "name": "ADFTutorialPipelineCustom",
+  "properties": {
+    "description": "Use custom activity",
+    "activities": [
+      {
+        "type": "DotNetActivity",
+        "typeProperties": {
+          "assemblyName": "AnalysisServicesProcessing.dll",
+          "entryPoint": "AnalysisServicesProcessing.ASProcessing",
+          "packageLinkedService": "AzureStorageLinkedService",
+          "packageFile": "<path to MyASProcess.zip>",
+          "extendedProperties": { 
+            "scriptContainer": "",
+            "scriptPath": ""
+          }
+        },
+        "outputs": [
+          {
+            "name": "OutputDataset"
+          }
+        ],
+        "policy": {
+          "timeout": "00:05:00",
+          "concurrency": 2,
+          "retry": 1
+        },
+        "scheduler": {
+          "frequency": "Hour",
+          "interval": 1
+        },
+        "name": "MyDotNetActivity",
+        "linkedServiceName": "AzureBatchLinkedService"
+      }
+    ],
+    "start": "2015-11-17T00:00:00Z",
+    "end": "2015-11-17T05:00:00Z",
+    "isPaused": false,    
+    "pipelineMode": "Scheduled"
+  }
+}

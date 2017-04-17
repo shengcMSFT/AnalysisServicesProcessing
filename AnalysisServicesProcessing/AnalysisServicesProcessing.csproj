@@ -105,6 +105,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ADFJSON\AzureBatchLinkedService.json" />
+    <None Include="ADFJSON\AzureStorageLinkedService.json" />
+    <None Include="ADFJSON\OutputDataset.json" />
+    <None Include="ADFJSON\pipelineDotNetActivity.json" />
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="processdatabase.json" />
