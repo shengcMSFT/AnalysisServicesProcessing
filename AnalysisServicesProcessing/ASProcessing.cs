@@ -21,7 +21,7 @@ namespace AnalysisServicesProcessing
             IActivityLogger logger)
         {
             // get extended properties defined in activity JSON definition
-            // (for example: SliceStart)
+           
             DotNetActivity dotNetActivity = (DotNetActivity)activity.TypeProperties;
             string scriptContainer = dotNetActivity.ExtendedProperties["scriptContainer"];
             string scriptPath = dotNetActivity.ExtendedProperties["scriptPath"];
@@ -61,7 +61,7 @@ namespace AnalysisServicesProcessing
             
             // read the blob content for Analysis Services processing TMSL json script from the extended properties passed to activity
             string asCmdStr = ReadBlob(blobconnectionString, scriptContainer, scriptPath);
-            // Connection string to connect to Azure AS. User can add further logic here for security as the extended properties in ADF JSON script is general purpose and does not encrypt the string. 
+            // Connection string to connect to Azure AS. User can do security stuffs here as the extended properties in ADF JSON script is general purpose and does not encrypt the string. 
             string asConnStr = @"<AS Connection String>";
             
             try
